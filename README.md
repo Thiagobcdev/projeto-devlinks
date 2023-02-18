@@ -30,7 +30,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 O DevLinks foi criado como cartão de visitas online.
 
-- [Visite o projeto online](https://thiagobcdev.github.io/projeto-nlwsetup/)
+- [Visite o projeto online](https://thiagobcdev.github.io/projeto-devlinks/)
 
 ## 🔖 Layout
 
