@@ -1,0 +1,213 @@
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Dancing+Script:wght@400;500;700&family=Forum&family=Inter:wght@100;200;300;400;500;600;700&family=Lato:wght@100;300;400;700;900&family=Merriweather+Sans:wght@300;400;500;700&family=Noto+Serif:wght@400;700&family=Open+Sans:wght@300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&family=Poppins:wght@200;400;500;700&family=Raleway:wght@200;300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+/* RESET */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background: var(--bg-url)
+    no-repeat top center /cover;
+   
+}
+
+body * {
+    font-family: "Inter", sans-serif;
+    color: var(--text--color);
+  }
+
+ol,ul{
+    list-style: none;
+}
+
+/* ROOT */
+
+:root {
+    --text--color: #fff;
+    --bg-url: url(../assets/image/bgmobiledark.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+    --switch-bg-url: url(../assets/image/moon.svg);
+}
+
+
+.lightMode{
+    --text--color: #000;
+    --bg-url: url(../assets/image/bgmobilelight.jpg);
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(0, 0, 0, 0.05);
+    --surface-color-hover: rgba(0, 0, 0, 0.02);
+    --highlight-color: rgba(0, 0, 0, 0.1);
+    --switch-bg-url: url(../assets/image/sun.svg);
+}
+
+
+/* CONTAINER */
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    /* margin: 56px 0px 32px; */
+}
+
+/* PROFILE */
+
+#profile img{
+    width: 112px;
+    height: 112px;
+    margin-bottom: 8px;
+    border: 2px solid var(--highlight-color);
+    border-radius: 999px;
+}
+
+#profile a p{
+    margin-bottom: 30px;
+}
+
+/* switchButton */
+#switchButton{
+    position: relative;
+    width: 64px;
+    margin: 4px auto;
+}
+
+#switchButton button{
+    width: 32px;
+    height: 32px;
+    background: var(--switch-bg-url) no-repeat center;
+    border: 0;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    transform: translateY(-50%);
+    z-index: 1;
+
+    animation: slideBack .2s;
+}
+
+.lightMode #switchButton button{
+    animation: slideIn .2s forwards;
+}
+
+#switchButton button:hover{
+    outline: 8px solid var(--highlight-color);
+}
+
+#switchButton span{
+    display: block;
+    width: 64px;
+    height: 24px;
+    background: var(--surface-color);
+    border: 1px solid var(--surface-color);
+    backdrop-filter: blur(4px);
+    border-radius: 9999px;
+}
+
+
+/* links */
+
+#links ul li{
+    margin: 16px 0px;
+    width: 380px;
+    height: 56px;
+    text-align: center;
+    padding: 16px 24px;
+    border-radius: 8px;
+    border: 1px solid var(--stroke-color);
+    backdrop-filter: blur(4px); 
+    background: var(--surface-color);
+}
+
+#links ul li:hover{
+    background: var(--highlight-color);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* socialLinks */
+#socialLinks ul{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 24px 0px;
+}
+
+#socialLinks ul li{
+    padding: 0px 16px;
+}
+
+#socialLinks a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+
+    transition: background 0.2s;
+    border-radius: 50%;
+}
+
+#socialLinks a:hover{
+    background: var(--highlight-color);
+}
+
+/* FOOTER */
+
+footer p{
+    font-size: 14px;
+}
+
+footer p span{
+    text-decoration: underline;
+    padding-left: 4px;
+}
+
+
+/* ANIMATION */
+
+@keyframes slideBack{
+    from{
+        left: 50%;
+    }
+    to{
+        left: 0;
+    }
+}
+
+
+@keyframes slideIn{
+    from{
+        left: 0;
+    }
+    to{
+        left: 50%;
+    }
+}
+
+/*MEDIA QUERY */
+
+@media(max-width:768px){
+    #links ul li{
+        width: 250px;
+    }
+
+    #socialLinks ul li{
+        padding: 0px;
+    }
+}
+
+
+
